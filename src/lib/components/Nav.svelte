@@ -1,0 +1,29 @@
+<script>
+    let props = $props();
+</script>
+
+<nav>
+<!--    <a href="/" class:active={props.page == "home"}>HOME</a>-->
+    <a href="/" class:active=true>HOME</a>
+    <a href="/about" class:active={props.page == "about"}>ABOUT</a>
+    <a href="/contact" class:active={props.page == "contact"}>CONTACT</a>
+</nav>
+
+<style>
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+    }
+    nav a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    a.active {
+        text-decoration: underline;
+        color: yellow;
+    }
+</style>
