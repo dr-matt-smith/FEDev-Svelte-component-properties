@@ -1,13 +1,22 @@
 <script>
-    let props = $props();
+//    let props = $props();
+    import { page } from '$app/state';
+
+
 </script>
 
 <nav>
-<!--    <a href="/" class:active={props.page == "home"}>HOME</a>-->
-    <a href="/" class:active=true>HOME</a>
-    <a href="/about" class:active={props.page == "about"}>ABOUT</a>
-    <a href="/contact" class:active={props.page == "contact"}>CONTACT</a>
+    <a href="/" class:active={page.url.pathname === "/"}>HOME</a>
+    <a href="/about" class:active={page.url.pathname === "/about"}>ABOUT</a>
+    <a href="/contact" class:active={page.url.pathname === "/contact"}>CONTACT</a>
 </nav>
+
+<!--<nav>-->
+<!--    <a href="/" class:active={props.page == "home"}>HOME</a>-->
+<!--    <a href="/about" class:active={props.page == "about"}>ABOUT</a>-->
+<!--    <a href="/contact" class:active={props.page == "contact"}>CONTACT</a>-->
+<!--</nav>-->
+
 
 <style>
     nav {
@@ -23,7 +32,7 @@
     }
 
     a.active {
-        text-decoration: underline;
+        background-color: grey;
         color: yellow;
     }
 </style>
